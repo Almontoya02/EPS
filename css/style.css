@@ -9,7 +9,7 @@ body{
 header, footer{
     /* responsive*/
     width:95%;
-    max-width: 2000px;
+
     margin:10px auto;
 
 }
@@ -77,6 +77,27 @@ footer p{
 .foto1, .foto2{
     width: 100%;
     height: 23.75%;
+    display: block;
+    margin-bottom: 50px;
+} 
+.fotoCris, .fotoAl{
+    width: 30%;
+    height: 23.75%;
+    align-content: center;
+    margin-bottom: 20px;
+    border-radius: 30px;
+} 
+.centrado{
+    text-align: center;
+}
+.contenedorBio{
+    width: 80%;
+    margin:10px auto;
+    height: 50%;
+    text-align: inherit;
+}
+.audio{
+    display: none;
 }
 
 
