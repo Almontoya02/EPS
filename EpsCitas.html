@@ -47,35 +47,41 @@
         <!-- / nav -->
     </header>
     <!--ocupa el 100%-->
-    <div class="container-fluid">
+
         <div class="container">
 
             <div class="login-form col-md-4 offset-md-4">
 
-                <h1 class="title">Login</h1>
-                <form>
+                <h1 class="title">EPS en linea</h1>
+            <form class="was-validated">
                     <div class="form-group">
 
-                        <input type="text" class="form-control" name="usuario" placeholder="Email" autofocus="" />
+                        <input type="number" class="form-control" name="usuario" placeholder="Email" autofocus="" required/>
                     </div>
 
                     <div class="form-group">
 
-                        <input type="password" class="form-control" name="contraseña" placeholder="Contraseña" />
+                        <input type="password" class="form-control" name="contraseña" placeholder="Contraseña" required />
                     </div>
+                <div class="form-group">
+                    <select class="custom-select" required>
+                        <option value="">Tipo de ingreso:</option>
+                        <option value="1">Doctor</option>
+                        <option value="2">Paciente</option>
+                        <option value="3">Admin</option>
+                    </select>
 
+                </div>
+              
                     <button class="btn btn-primary btn block">Ingresar</button>
 
-                </form>
+            </form>
 
             </div>
         </div>
-
-
-
-
-    </div>
-    
+        <footer id="main-footer">
+            <p>© 2018 secsoAnal :V</p>
+        </footer>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>

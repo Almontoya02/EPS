@@ -1,5 +1,10 @@
 
  function sonido(){
-    document.getElementById('audio').style.display="inline"
+    if(document.getElementById('audio').style.display="none"){
+        document.getElementById('audio').style.display="inline"
+    }
+    else if(document.getElementById('audio').style.display="inline"){
+        document.getElementById('audio').style.display="none"
+    }
  }
 
