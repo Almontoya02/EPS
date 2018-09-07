@@ -99,7 +99,7 @@ footer p{
 .audio{
     display: none;
 }
-.contenedorFormPac{
+.contenedorFormPac , .contenedorFormCitas{
     width: 90%;
     margin:10px auto;
     height: 50%;
