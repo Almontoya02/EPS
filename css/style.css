@@ -94,7 +94,7 @@ footer p{
     width: 80%;
     margin:10px auto;
     height: 50%;
-    text-align: inherit;
+    text-align: justify;
 }
 .audio{
     display: none;
