@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/main.js"></script>
+    <script src="js/Pacientes.js"></script>
     <style>
         #confirmEditP{
                 display:none
@@ -43,13 +43,13 @@
     </header>
     <!--ocupa el 100%-->
     <div class="contenedorFormPac">
-        <form class="was-validated">
+        <form class="frmPacientes">
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="ide">Cédula</label>
                     <i class="fa fa-id-card-o" aria-hidden="true"></i>
                     <div class="input-group">
-                        <input type="number" class="form-control" id="ide" placeholder="cédula" aria-describedby="inputGroupPrepend"
+                        <input type="number" class="form-control" id="ide" placeholder="Cédula" aria-describedby="inputGroupPrepend"
                             required>
                         <div class="invalid-feedback">
                             Ingrese Cédula valida.
@@ -66,15 +66,20 @@
                 <div class="col-md-4 mb-3">
                     <label for="apellidosP">Apellidos</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="apellidosP" placeholder="Apellidos" aria-describedby="inputGroupPrepend">
+                        <input type="text" class="form-control" id="apellidosP" placeholder="Apellidos"
+                            aria-describedby="inputGroupPrepend">
                     </div>
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="telefono">Telefono</label>
+                <div class="col-md-3 mb-3">
+                    <label for="contraseñaP">Contraseña</label>
+                    <input type="password" class="form-control" id="contraseñaP">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="telefono">Teléfono</label>
                     <i class="fa fa-mobile-phone" aria-hidden="true"></i>
-                    <input type="number" class="form-control" id="telefono" placeholder="Telefono">
+                    <input type="number" class="form-control" id="telefonoP" placeholder="Teléfono">
                     <div class="invalid-feedback">
                         Ingrese Telefono valido.
                     </div>
@@ -82,7 +87,7 @@
                 <div class="col-md-3 mb-3">
                     <label for="direccion">Dirección</label>
                     <i class="fa fa-address-book-o" aria-hidden="true"></i>
-                    <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+                    <input type="text" class="form-control" id="direccionP" placeholder="Dirección">
                     <div class="invalid-feedback">
                         Ingrese una Dirección valida.
                     </div>
@@ -90,19 +95,20 @@
                 <div class="col-md-3 mb-3">
                     <label for="correo">Correo electrónico</label>
                     <i class="fas fa-exclamation-circle"></i>
-                    <input type="email" class="form-control" id="correo" placeholder="Correo electrónico">
+                    <input type="email" class="form-control" id="correoP" placeholder="Correo electrónico">
                     <div class="invalid-feedback">
                         Ingrese un correo valido.
                     </div>
                 </div>
             </div>
             <div>
-                <button class="btn btn-primary" id="crearP" type="submit">Ingresar Paciente</button>
-                <button class="btn btn-secondary" id="editarP" type="submit">Editar paciente</button>
-                <button class="btn btn-danger" id="deleteP" type="submit">Eliminar paciente</button>
-                <button class="btn btn-Dark" id="confirmEditP" type="submit">Guardar Información</button>
+                <button type="submit" class="btn btn-primary" id="crearP" type="submit" onclick="agregar()">Ingresar Paciente</button>
             </div>
         </form>
+        <hr>
+        <div class="container">
+                <table id="tblList" class="table table-bordered"></table>
+        </div>
 
     </div>
     <footer id="main-footer">
