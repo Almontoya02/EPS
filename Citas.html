@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EPS Wolfram</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <!--BOOTSTRAP-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- JQuery and Pooper.js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js"></script>
+
+    <style>
+        #confirmUpdate{
+                display:none
+            }
+     </style>
+
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="logo-header" href="index.html">
+            <img src="img/logo.jpg" width="200px">
+        </a> <!-- / #logo-header -->
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a href="EpsCitas.html">EPS en linea</a></li>
+            </ul>
+        </nav><!-- / nav -->
+    </header>
+
+    <!--ocupa el 100%-->
+    <div class="contenedorFormCitas">
+        <div class="was-validated" required>
+
+            <h1>Citas</h1>
+            <form>
+                <div class="form-group row">
+                    <div class="col-md-4 mb-3">
+                        <input type="date" class="form-control" id="fechaCita" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-4 mb-3">
+                        <input type="time" class="form-control" id="horaCita" min="10:00:00">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-4 mb-3">
+                        <select name="selecionarDoctor" id="selectDoctor" class="form-control">
+                            <option value="">Selecionar doctor</option>
+                        </select>
+                    </div>
+                </div>
+
+            
+                    <div>
+                        <button type="submit"  id="crearC" class="btn btn-primary">Agendar cita</button>
+                        <button type="submit" id="editarC" class="btn btn-secondary">Editar Cita</button>
+                        <button type="submit" id="deleteC" class="btn btn-danger">Eliminar cita</button>
+                        <button class="btn btn-Dark" id="confirmUpdate" type="submit">Guardar Información</button>
+                    </div>
+                
+            </form>
+        </div>
+
+
+    </div>
+
+    <footer id="main-footer">
+        <p>© 2018 secsoAnal :V</p>
+    </footer>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
