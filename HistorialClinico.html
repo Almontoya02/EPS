@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/main.js"></script>
+    <script src="js/HistorialClinico.js"></script>
 </head>
 
 <body>
@@ -46,7 +46,6 @@
                     <div class="input-group">
                         <input type="number" class="form-control" id="ide" placeholder="cédula" aria-describedby="inputGroupPrepend"
                             required>
-                        <button class="btn btn-primary" id="BuscarP" type="submit">Buscar Paciente</button>
                         <div class="invalid-feedback">
                             Ingrese Cédula valida.
                         </div>
@@ -60,6 +59,10 @@
             <button class="btn btn-secondary" id="guardarHistorial" type="submit">Guardar cambios</button>
 
         </form>
+        <hr>
+        <div class="container">
+                <table id="tblList" class="table table-bordered"></table>
+        </div>
 
     </div>
     <!-- Latest compiled and minified JavaScript -->
