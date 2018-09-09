@@ -1,4 +1,4 @@
-var login=function(){
+var login= new function(){
     
     /**
      * arreglo de doctores
@@ -59,8 +59,43 @@ var login=function(){
     ];
 
 
+     loguear= function(){
+        var user =document.getElementById('user').value;
+        var password=document.getElementById('password').value;
+        var option=document.getElementById('selectUser').value;
 
 
+
+        switch(option){
+            case "1":
+                var bandera=false;
+                for(i=0;i<doctores.length;i++){
+                    if(doctores[i].user==user && doctores[i].password==password){
+                        bandera=true;
+                   }
+                }
+
+                if(bandera==true){
+                    location.href="HistorialClinico.html";
+                }else{
+                    alert("usuario o contraseña incorrectos");
+                }
+
+
+            break;
+
+            case "2":
+            break;
+
+            case "3":
+            break;
+        }
+
+
+     }
+
+
+     
 
 
 }

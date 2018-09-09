@@ -53,7 +53,7 @@ $(function () {
               "<th>Fecha</th>" +
               "<th>Hora</th>" +
               "<th>Doctor</th>" +
-              "<th>Action</th>" +
+              "<th>Acción</th>" +
               "</tr>" +
               "</thead>" +
               "<tbody>" +
