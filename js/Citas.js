@@ -65,7 +65,8 @@ $(function () {
                   "<td>" + cita.Cedula + "</td>" +
                   "<td>" + cita.Fecha + "</td>" +
                   "<td>" + cita.Hora+ "</td>" +
-                  "<td>" + cita.Doctor + "</td>" +                    
+                  "<td>" + cita.Doctor + "</td>" +
+                  "<td><img src='img/edit.png' alt='Edit" + i + "' class='btnEdit'/>&nbsp &nbsp<img src='img/delete.png' alt='Delete" + i + "' class='btnDelete'/></td>" +                    
                   "</tr>"
                   );
       } 
@@ -76,26 +77,24 @@ $(function () {
           return Create();
       else
           return Edit();
+
     }); 
     
     List();
     
-    /**
-     * no he hecho esto :v (lo de abajo)
-     */
+    
   
     $(".btnEdit").bind("click", function () {
       operation = "E"; 
       
       selected_index = parseInt($(this).attr("alt").replace("Edit", ""));
       
-      var per = JSON.parse(tblPersons[selected_index]); 
-      $("#txtYears").val(per.Years);
-      $("#txtMotivation").val(per.Motivation);
-      $("#txtGoals").val(per.Goals);
-      $("#txtReason").val(per.Reason);
-      $("#txtYears").attr("readonly", "readonly");
-      $("#txtMotivation").focus();
+      var cita = JSON.parse(tblCitas[selected_index]); 
+      $("#cedulaPaciente").val(cita.Cedula);
+      $("#fechaCita").val(cita.Fecha);
+      $("#horaCita").val(cita.Hora);
+      $("#selectDoctor").val(cita.Doctor);
+      $("#cedulaPaciente").focus();
     });
   
     $(".btnDelete").bind("click", function () {
@@ -103,5 +102,6 @@ $(function () {
       selected_index = parseInt($(this).attr("alt").replace("Delete", "")); 
       Delete(); 
       List(); 
+      location.reload();
     });
   });
