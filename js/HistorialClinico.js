@@ -11,12 +11,11 @@ $(function () {
     var tblHistorial = localStorage.getItem("tblHistorial");
     tblHistorial = JSON.parse(tblHistorial);
     if (tblHistorial === null)
-        tblHistorial = [];
+        tblHistorial = []; 
+                    
 
     function Create() {
-        if ($("#ide").val()!== "") {
-            for (var i = 0; i <= tblHistorial.length; i++) {
-                if (tblHistorial[i].Cedula !== $("#ide").val().stringify) {
+        if ($("#ide").val()!= "") {       
                     var Historial = JSON.stringify({
                         Cedula: $("#ide").val(),
                         HistorialP: $("#historialP").val()
@@ -26,15 +25,6 @@ $(function () {
                     //se guarda localmente
                     localStorage.setItem("tblHistorial", JSON.stringify(tblHistorial));
                     alert("Historial agregado correctamente");
-                    return true;
-                    
-                }
-                else {
-                    alert("Usuario existente")
-                    break;
-                }
-
-            }
         }else{
             alert("Ingrese Cédula")
         }
