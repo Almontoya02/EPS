@@ -13,9 +13,11 @@ $(function () {
     if (tblHistorial === null)
         tblHistorial = []; 
                     
-
+var  comprobar=false;
     function Create() {
-        if ($("#ide").val()!= "") {       
+        if ($("#ide").val()!= "") {
+            for (var i = 0; i <= tblHistorial.length; i++) {
+                if (tblHistorial[i].Cedula !== $("#ide").val()) {
                     var Historial = JSON.stringify({
                         Cedula: $("#ide").val(),
                         HistorialP: $("#historialP").val()
@@ -25,6 +27,15 @@ $(function () {
                     //se guarda localmente
                     localStorage.setItem("tblHistorial", JSON.stringify(tblHistorial));
                     alert("Historial agregado correctamente");
+                    return true;
+                    
+                 }
+                 if(comprobar==false) {
+                    alert("Usuario existente")
+                    break;
+                 }
+
+            }
         }else{
             alert("Ingrese Cédula")
         }
