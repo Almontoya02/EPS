@@ -21,8 +21,8 @@ $(function () {
       Apellidos: $("#apellidosP").val(),
       Contraseña: $("#contraseñaP").val(),
       Telefono: $("#telefonoP").val(),
-      Direccion: $("#direccionP").val()
-
+      Direccion: $("#direccionP").val(),
+      Correo: $("#correoP").val()
     }); 
     //se agrega a la tabla
     tblPacientes.push(paciente);
@@ -40,7 +40,8 @@ $(function () {
       Apellidos: $("#apellidosP").val(),
       Contraseña: $("#contraseñaP").val(),
       Telefono: $("#telefonoP").val(),
-      Direccion: $("#direccionP").val()
+      Direccion: $("#direccionP").val(),
+      Correo: $("#correoP").val()
     });
     //actualiza la tabla local
     localStorage.setItem("tblPacientes", JSON.stringify(tblPacientes)); 
@@ -67,6 +68,8 @@ $(function () {
             "<th>Contraseña</th>" +
             "<th>Teléfono</th>" +
             "<th>Dirección</th>" +
+            "<th>Correo</th>" +
+            "<th>Acciones</th>" +
             "</tr>" +
             "</thead>" +
             "<tbody>" +
@@ -81,7 +84,8 @@ $(function () {
                 "<td>" + pac.Apellidos + "</td>" +
                 "<td>" + pac.Contraseña + "</td>" +   
                 "<td>" + pac.Telefono + "</td>" +
-                "<td>" + pac.Direccion + "</td>" +                 
+                "<td>" + pac.Direccion + "</td>" +  
+                "<td>" + pac.Correo + "</td>" +                
                 "<td><img src='img/edit.png' alt='Edit" + i + "' class='btnEdit'/>&nbsp &nbsp<img src='img/delete.png' alt='Delete" + i + "' class='btnDelete'/></td>" +
                 "</tr>"
                 );
@@ -111,29 +115,19 @@ $(function () {
     $("#contraseñaP").val(pac.Contraseña);
     $("#telefonoP").val(pac.Telefono);
     $("#direccionP").val(pac.Direccion);
+    $("#correoP").val(pac.Correo);
     $("#ide").attr("readonly", "readonly");
     $("#nombreP").attr("readonly", "readonly");
-    $("#ape").attr("readonly", "readonly");
-    $("#txtMotivation").focus();
+    $("#apellidosP").attr("readonly", "readonly");
   });
 
   $(".btnDelete").bind("click", function () {
 
     selected_index = parseInt($(this).attr("alt").replace("Delete", "")); 
     Delete(); 
-    List(); 
+    List();
+    location.reload(true);
   });
 });
 
-
-  
-  
- function sonido(){
-    if(document.getElementById('audio').style.display="none"){
-        document.getElementById('audio').style.display="inline"
-    }
-    else if(document.getElementById('audio').style.display="inline"){
-        document.getElementById('audio').style.display="none"
-    }
- }
 
