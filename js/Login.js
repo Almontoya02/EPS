@@ -68,6 +68,7 @@ var login= new function(){
 
         switch(option){
             case "1":
+                alert("1");
                 var bandera=false;
                 for(i=0;i<doctores.length;i++){
                     if(doctores[i].user==user && doctores[i].password==password){
@@ -76,7 +77,10 @@ var login= new function(){
                 }
 
                 if(bandera==true){
-                    location.href="HistorialClinico.html";
+                    alert("se ha logueado correctamente");
+                    console.log(location);
+                    location.href="./HistorialClinico.html";
+                    return;
                 }else{
                     alert("usuario o contraseña incorrectos");
                 }
@@ -85,9 +89,11 @@ var login= new function(){
             break;
 
             case "2":
+            alert("2");
             break;
 
             case "3":
+            alert("2+1");
             break;
         }
 
