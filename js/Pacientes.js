@@ -6,7 +6,7 @@ $(function () {
   var operation = "C";
   var selected_index = -1;
   /**
-   * Esta variable permite que los datos de la tabla no se borren
+   * Esta variable permite que los datos de la tabla no se borren haciendo el almacenamiento localmente en el navegador
    */
   var tblPacientes = localStorage.getItem("tblPacientes"); 
   tblPacientes = JSON.parse(tblPacientes); 

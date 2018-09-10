@@ -68,7 +68,6 @@ var login= new function(){
 
         switch(option){
             case "1":
-                alert("1");
                 var bandera=false;
                 for(i=0;i<doctores.length;i++){
                     if(doctores[i].user==user && doctores[i].password==password){
@@ -84,16 +83,44 @@ var login= new function(){
                 }else{
                     alert("usuario o contraseña incorrectos");
                 }
-
-
             break;
 
             case "2":
-            alert("2");
+            var bandera=false;
+                for(i=0;i<secretarias.length;i++){
+                    if(secretarias[i].user==user && secretarias[i].password==password){
+                        bandera=true;
+                   }
+                }
+
+                if(bandera==true){
+                    alert("se ha logueado correctamente");
+                    console.log(location);
+                    location.href="./Citas.html";
+                    return;
+                }else{
+                    alert("usuario o contraseña incorrectos");
+                }
+
             break;
 
             case "3":
-            alert("2+1");
+            var bandera=false;
+                for(i=0;i<admins.length;i++){
+                    if(admins[i].user==user && admins[i].password==password){
+                        bandera=true;
+                   }
+                }
+
+                if(bandera==true){
+                    alert("se ha logueado correctamente");
+                    console.log(location);
+                    location.href="./Pacientes.html";
+                    return;
+                }else{
+                    alert("usuario o contraseña incorrectos");
+                }
+
             break;
         }
 
