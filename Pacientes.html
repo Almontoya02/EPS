@@ -37,7 +37,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-                <li><a href="EpsCitas.html">EPS en linea</a></li>
+                <li><a href="EpsLinea.html">EPS en linea</a></li>
             </ul>
         </nav><!-- / nav -->
     </header>
@@ -59,7 +59,7 @@
                 <div class="col-md-4 mb-3">
                     <label for="nombreP">Nombre</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="nombreP" placeholder="Nombre" aria-describedby="inputGroupPrepend">
+                        <input type="text" class="form-control" id="nombreP" placeholder="Nombre" aria-describedby="inputGroupPrepend" required>
 
                     </div>
                 </div>
@@ -67,19 +67,19 @@
                     <label for="apellidosP">Apellidos</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="apellidosP" placeholder="Apellidos"
-                            aria-describedby="inputGroupPrepend">
+                            aria-describedby="inputGroupPrepend" required>
                     </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-3 mb-3">
                     <label for="contraseñaP">Contraseña</label>
-                    <input type="password" class="form-control" id="contraseñaP">
+                    <input type="password" class="form-control" id="contraseñaP" required>
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="telefono">Teléfono</label>
                     <i class="fa fa-mobile-phone" aria-hidden="true"></i>
-                    <input type="number" class="form-control" id="telefonoP" placeholder="Teléfono">
+                    <input type="number" class="form-control" id="telefonoP" placeholder="Teléfono" required>
                     <div class="invalid-feedback">
                         Ingrese Telefono valido.
                     </div>
@@ -87,7 +87,7 @@
                 <div class="col-md-3 mb-3">
                     <label for="direccion">Dirección</label>
                     <i class="fa fa-address-book-o" aria-hidden="true"></i>
-                    <input type="text" class="form-control" id="direccionP" placeholder="Dirección">
+                    <input type="text" class="form-control" id="direccionP" placeholder="Dirección" required>
                     <div class="invalid-feedback">
                         Ingrese una Dirección valida.
                     </div>
@@ -95,7 +95,7 @@
                 <div class="col-md-3 mb-3">
                     <label for="correo">Correo electrónico</label>
                     <i class="fas fa-exclamation-circle"></i>
-                    <input type="email" class="form-control" id="correoP" placeholder="Correo electrónico">
+                    <input type="email" class="form-control" id="correoP" placeholder="Correo electrónico" required>
                     <div class="invalid-feedback">
                         Ingrese un correo valido.
                     </div>

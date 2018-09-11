@@ -5,9 +5,9 @@ $(function () {
     tblCitas = JSON.parse(tblCitas); 
     if (tblCitas === null)
         tblCitas = [];
-  
+       
     function Create() {
-    
+    if($("#Cedula".val()!="")){
       var citas = JSON.stringify({
         Cedula: $("#cedulaPaciente").val(),
         Fecha: $("#fechaCita").val(),
@@ -20,6 +20,7 @@ $(function () {
       localStorage.setItem("tblCitas", JSON.stringify(tblCitas));
       alert("La cita ha sido guardada");
       return true;
+    }
     }
   
     function Edit() {

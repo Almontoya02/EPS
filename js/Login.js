@@ -1,20 +1,20 @@
-var login= new function(){
-    
+var login = new function () {
+
     /**
      * arreglo de doctores
      */
-    var doctores=[
+    var doctores = [
         {
-            user:1234,
-            password:'1234'
+            user: 1234,
+            password: '1234'
         },
         {
-            user:6521,
-            password:'abcd'
+            user: 6521,
+            password: 'abcd'
         },
         {
-            user:6451,
-            password:'code'
+            user: 6451,
+            password: 'code'
         }
 
     ];
@@ -22,18 +22,18 @@ var login= new function(){
     /**
      * arreglo de secretarias
      */
-    var secretarias=[
+    var secretarias = [
         {
-            user:789,
-            password:'1234'
+            user: 789,
+            password: '1234'
         },
         {
-            user:007,
-            password:'abcd'
+            user: 007,
+            password: 'abcd'
         },
         {
-            user:1011,
-            password:'code'
+            user: 1011,
+            password: 'code'
         }
 
     ];
@@ -42,93 +42,91 @@ var login= new function(){
      * arreglo de admins
      * 
      */
-    var admins=[
+    var admins = [
         {
-            user:0000,
-            password:'1234'
+            user: 0000,
+            password: '1234'
         },
         {
-            user:543,
-            password:'abcd'
+            user: 543,
+            password: 'abcd'
         },
         {
-            user:210,
-            password:'code'
+            user: 210,
+            password: 'code'
         }
 
     ];
 
 
-     loguear= function(){
-        var user =document.getElementById('user').value;
-        var password=document.getElementById('password').value;
-        var option=document.getElementById('selectUser').value;
+    loguear = function () {
+        var user = document.getElementById('user').value;
+        var password = document.getElementById('password').value;
+        var option = document.getElementById('selectUser').value;
 
 
 
-        switch(option){
+        switch (option) {
             case "1":
-                var bandera=false;
-                for(i=0;i<doctores.length;i++){
-                    if(doctores[i].user==user && doctores[i].password==password){
-                        bandera=true;
-                   }
+                var bandera = false;
+                for (i = 0; i < doctores.length; i++) {
+                    if (doctores[i].user == user && doctores[i].password == password) {
+                        bandera = true;
+                    }
                 }
 
-                if(bandera==true){
-                    alert("se ha logueado correctamente");
+                if (bandera == true) {
+                    
                     console.log(location);
-                    location.href="./HistorialClinico.html";
+                    location.href = "./HistorialClinico.html";
                     return;
-                }else{
+                } else {
                     alert("usuario o contraseña incorrectos");
                 }
-            break;
+                break;
 
             case "2":
-            var bandera=false;
-                for(i=0;i<secretarias.length;i++){
-                    if(secretarias[i].user==user && secretarias[i].password==password){
-                        bandera=true;
-                   }
+                var bandera = false;
+                for (i = 0; i < secretarias.length; i++) {
+                    if (secretarias[i].user == user && secretarias[i].password == password) {
+                        bandera = true;
+                    }
                 }
 
-                if(bandera==true){
-                    alert("se ha logueado correctamente");
+                if (bandera == true) {
                     console.log(location);
-                    location.href="./Citas.html";
+                    location.href = "./Citas.html";
                     return;
-                }else{
+                } else {
                     alert("usuario o contraseña incorrectos");
                 }
 
-            break;
+                break;
 
             case "3":
-            var bandera=false;
-                for(i=0;i<admins.length;i++){
-                    if(admins[i].user==user && admins[i].password==password){
-                        bandera=true;
-                   }
+                var bandera = false;
+                for (i = 0; i < admins.length; i++) {
+                    if (admins[i].user == user && admins[i].password == password) {
+                        bandera = true;
+                    }
                 }
 
-                if(bandera==true){
-                    alert("se ha logueado correctamente");
+                if (bandera == true) {
                     console.log(location);
-                    location.href="./Pacientes.html";
+                    location.href = "./Pacientes.html";
                     return;
-                }else{
+                } else {
                     alert("usuario o contraseña incorrectos");
                 }
 
-            break;
+                break;
         }
 
 
-     }
+    }
 
 
-     
+
 
 
 }

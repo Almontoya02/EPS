@@ -11,11 +11,12 @@ $(function () {
     var tblHistorial = localStorage.getItem("tblHistorial");
     tblHistorial = JSON.parse(tblHistorial);
     if (tblHistorial === null)
-        tblHistorial = []; 
+        tblHistorial = [];
+      
                     
 var  comprobar=false;
     function Create() {
-        if ($("#ide").val()!= "") {
+        if ($("#ide").val()!= "" && $("#historialP").val()!= "" ) {
             for (var i = 0; i <= tblHistorial.length; i++) {
                 if (tblHistorial[i].Cedula !== $("#ide").val()) {
                     var Historial = JSON.stringify({
@@ -37,7 +38,7 @@ var  comprobar=false;
 
             }
         }else{
-            alert("Ingrese Cédula")
+            alert("Ingrese Todos los datos")
         }
     }
     function Edit() {

@@ -12,9 +12,10 @@ $(function () {
   tblPacientes = JSON.parse(tblPacientes); 
   if (tblPacientes === null)
     tblPacientes = [];
+  
 
   function Create() {
-  
+    if ($("#ide").val()!= "" && $("#nombreP").val()!= "" && $("#apellidosP").val()!= "" && $("#contraseñaP").val()!= "" && $("#telefonoP").val()!= "") {
     var paciente = JSON.stringify({
       Cedula: $("#ide").val(),
       Nombre: $("#nombreP").val(),
@@ -30,6 +31,10 @@ $(function () {
     localStorage.setItem("tblPacientes", JSON.stringify(tblPacientes));
     alert("Paciente agregado correctamente");
     return true;
+  }
+  else{
+    alert("Ingrese todos los datos")
+  }
   }
 
   function Edit() {
