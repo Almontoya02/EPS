@@ -7,7 +7,7 @@ $(function () {
         tblCitas = [];
        
     function Create() {
-    if($("#Cedula".val()!="")){
+   
       var citas = JSON.stringify({
         Cedula: $("#cedulaPaciente").val(),
         Fecha: $("#fechaCita").val(),
@@ -21,7 +21,7 @@ $(function () {
       alert("La cita ha sido guardada");
       return true;
     }
-    }
+    
   
     function Edit() {
   
@@ -96,6 +96,7 @@ $(function () {
       $("#horaCita").val(cita.Hora);
       $("#selectDoctor").val(cita.Doctor);
       $("#cedulaPaciente").focus();
+      $("#cedulaPaciente").attr("readonly","readonly")
     });
   
     $(".btnDelete").bind("click", function () {

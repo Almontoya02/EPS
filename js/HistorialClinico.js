@@ -12,35 +12,29 @@ $(function () {
     tblHistorial = JSON.parse(tblHistorial);
     if (tblHistorial === null)
         tblHistorial = [];
-      
-                    
-var  comprobar=false;
+
+
+    var comprobar = false;
     function Create() {
-        if ($("#ide").val()!= "" && $("#historialP").val()!= "" ) {
+        if ($("#ide").val() != "" && $("#historialP").val() != "") {
             for (var i = 0; i <= tblHistorial.length; i++) {
-                if (tblHistorial[i].Cedula !== $("#ide").val()) {
-                    var Historial = JSON.stringify({
-                        Cedula: $("#ide").val(),
-                        HistorialP: $("#historialP").val()
-                    });
-                    //se agrega a la tabla
-                    tblHistorial.push(Historial);
-                    //se guarda localmente
-                    localStorage.setItem("tblHistorial", JSON.stringify(tblHistorial));
-                    alert("Historial agregado correctamente");
-                    return true;
-                    
-                 }
-                 if(comprobar==false) {
-                    alert("Usuario existente")
-                    break;
-                 }
+                var Historial = JSON.stringify({
+                    Cedula: $("#ide").val(),
+                    HistorialP: $("#historialP").val()
+                });
+                //se agrega a la tabla
+                tblHistorial.push(Historial);
+                //se guarda localmente
+                localStorage.setItem("tblHistorial", JSON.stringify(tblHistorial));
+                alert("Historial agregado correctamente");
+                return true;
 
             }
-        }else{
+        } else {
             alert("Ingrese Todos los datos")
         }
     }
+
     function Edit() {
         //obtiene los datos del elemento seleccionado
         tblHistorial[selected_index] = JSON.stringify({
