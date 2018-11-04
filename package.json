@@ -1,0 +1,22 @@
+{
+  "name": "eps",
+  "version": "1.0.0",
+  "description": "Este proyecto es el los servicios de una EPS en linea",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Almontoya02/EPS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Almontoya02/EPS/issues"
+  },
+  "homepage": "https://github.com/Almontoya02/EPS#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
