@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Almontoya02/EPS#readme",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
   }
 }
