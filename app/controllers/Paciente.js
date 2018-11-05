@@ -1,20 +1,28 @@
 //Intanciar el express
-const express = require('express');
+const express = require('express')
+const mongoose = require('mongoose')
 const routes = express.Router()
+//const Paciente = mongoose.model('Paciente')
 const crud = require('../services/crud_mongo')
 
-routes.get('/', function (req, res) {
-    //Capturo la respuesta del get 
-    crud.Mongo().get('Pacientes', {}).then(function (respuesta) {
+routes.get('/pacientes', function (req, res) {
+    //Capturo la respuesta del get
+    crud.Mongo().get('Paciente', {}).then(function (paciente) {
         //Retorno la respuesta  al cliente
-        console.log(respuesta);
-        res.send(respuesta)
+        console.log(paciente)
+        res.send(paciente)
     }).catch(function (error) {
         //Retorno el error al cliente
         console.log(error)
         res.send(error)
     });
 })
+
+/*exports.findAll = function(req, res) {
+  Paciente.find({}).exec(function(err, paciente){
+    console.log(paciente)
+  })
+}*/
 
 routes.get('/:name/:activo?', function (req, res) {
     //Capturar parametro de url (name)
@@ -23,9 +31,9 @@ routes.get('/:name/:activo?', function (req, res) {
     //Capturar otros parametros (?id=5&name=saurmo)
     var query_param = req.query
     console.log(query_param)
-    //filtro para consultar 
+    //filtro para consultar
     var filtro = { name: name_param }
-    //Capturo la respuesta del get 
+    //Capturo la respuesta del get
     crud.Mongo().get('Pacientes', filtro).then(function (respuesta) {
         //Retorno la respuesta  al cliente
         res.send(respuesta)
@@ -50,7 +58,7 @@ routes.post('/', function (req, res) {
         console.log('Error al agregar', error)
         res.send(error)
     })
-    
+
 })
 
 module.exports = routes

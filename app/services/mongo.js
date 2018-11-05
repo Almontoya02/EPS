@@ -14,29 +14,21 @@ class MongoCrud {
 
     connection() {
         // Connection to db
-        const url = 'mongodb://localhost:27017';
+        const url = 'localhost:27017';
         // Database Name
-<<<<<<< HEAD
-        const dbName = 'testnode';
-=======
         const dbName = 'Hospital';
->>>>>>> 24314e3ab8046e5acf5387a56e1865820d554d5a
         const Client = mongo.MongoClient;
         var connection = new Client(url)
         connection.connect(function (err) {
             console.log("Connected successfully to server");
             const db = connection.db(dbName);
-            const col = db.collection('users');
+            /*const col = db.collection('');
             // Get first two documents that match the query
             col.find({}).toArray(function (err, docs) {
                 console.log(docs);
                 connection.close();
             });
-            connection.close();
+            connection.close();*/
         });
-    }
-
-    showHello() {
-        return 'Hello '
     }
 }
