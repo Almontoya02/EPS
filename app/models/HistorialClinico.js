@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Citas = new Schema(
+const HistoriaClinica = new Schema(
   {
-    cedula : String,
+    _id : String,
     historia_clinica : String
   }
 )
 
-module.exports = mongoose.model('HistoriaClinica', Citas)
+module.exports = mongoose.model('HistoriaClinica', HistoriaClinica)

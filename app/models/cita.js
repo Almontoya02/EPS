@@ -1,14 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const ObjectId = Schema.Types.ObjectId
 
-const Citas = new Schema(
+const Cita = new Schema(
   {
-    cedula : String,
+    _id : String,
     fecha : String,
     hora : String,
     doctor : String
   }
 )
 
-module.exports = mongoose.model('Citas', Citas)
+module.exports = mongoose.model('Cita', Cita)
