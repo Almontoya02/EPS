@@ -7,9 +7,9 @@ const crud = require('../services/crud_mongo')
 
 routes.get('/pacientes', function (req, res) {
     //Capturo la respuesta del get
-    crud.Mongo().get('Paciente', {}).exec(function (paciente) {
+    crud.Mongo().get('Paciente', {}).then(function (paciente) {
         //Retorno la respuesta  al cliente
-        console.log(paciente);
+        console.log(paciente)
         res.send(paciente)
     }).catch(function (error) {
         //Retorno el error al cliente

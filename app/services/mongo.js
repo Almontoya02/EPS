@@ -14,7 +14,7 @@ class MongoCrud {
 
     connection() {
         // Connection to db
-        const url = 'mongodb://localhost:27017';
+        const url = 'localhost:27017';
         // Database Name
         const dbName = 'Hospital';
         const Client = mongo.MongoClient;
@@ -27,8 +27,8 @@ class MongoCrud {
             col.find({}).toArray(function (err, docs) {
                 console.log(docs);
                 connection.close();
-            });*/
-            connection.close();
+            });
+            connection.close();*/
         });
     }
 }
