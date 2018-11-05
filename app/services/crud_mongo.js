@@ -1,7 +1,7 @@
 
 /**
  * Servicio de mongodb
- * 
+ *
  */
 const mongo = require('mongodb');
 
@@ -13,23 +13,20 @@ module.exports = {
 
 class CrudOperations {
   constructor() {
-    //Conexion a la base de datos: 
+    //Conexion a la base de datos:
     //mongodb://{{username}}:{{password}}@{{address}}:{{port}}/{{database}}
     this.url = 'mongodb://localhost:27017';
     //Nombre de la base de datos
-<<<<<<< HEAD
-    this.dbName = 'testnode';
-=======
+    //this.dbName = 'testnode';
     this.dbName = 'Hospital';
->>>>>>> 24314e3ab8046e5acf5387a56e1865820d554d5a
     this.db = null;
     this.client = null;
   }
 
   /**
    * Insertar datos en una colección
-   * @param {* Nombre de la coleccion} collection 
-   * @param {* Información a guardar (json)} payload 
+   * @param {* Nombre de la coleccion} collection
+   * @param {* Información a guardar (json)} payload
    */
   async insert(collection, payload) {
     try {
@@ -50,9 +47,9 @@ class CrudOperations {
   }
   /**
    * Modificar dato en una colección
-   * @param {*} collection 
-   * @param {*} filter 
-   * @param {*} data 
+   * @param {*} collection
+   * @param {*} filter
+   * @param {*} data
    */
   async update(collection, filter, data) {
     try {
@@ -78,8 +75,8 @@ class CrudOperations {
   }
   /**
    * Consultar datos en una colección
-   * @param {*} collection 
-   * @param {*} filter 
+   * @param {*} collection
+   * @param {*} filter
    */
   async get(collection, filter) {
     try {
@@ -100,4 +97,3 @@ class CrudOperations {
   }
 
 }
-
