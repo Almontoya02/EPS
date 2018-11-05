@@ -17,7 +17,11 @@ class CrudOperations {
     //mongodb://{{username}}:{{password}}@{{address}}:{{port}}/{{database}}
     this.url = 'mongodb://localhost:27017';
     //Nombre de la base de datos
+<<<<<<< HEAD
+    this.dbName = 'testnode';
+=======
     this.dbName = 'Hospital';
+>>>>>>> 24314e3ab8046e5acf5387a56e1865820d554d5a
     this.db = null;
     this.client = null;
   }

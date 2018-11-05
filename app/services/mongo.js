@@ -16,7 +16,11 @@ class MongoCrud {
         // Connection to db
         const url = 'mongodb://localhost:27017';
         // Database Name
+<<<<<<< HEAD
+        const dbName = 'testnode';
+=======
         const dbName = 'Hospital';
+>>>>>>> 24314e3ab8046e5acf5387a56e1865820d554d5a
         const Client = mongo.MongoClient;
         var connection = new Client(url)
         connection.connect(function (err) {
