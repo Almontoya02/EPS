@@ -2,13 +2,27 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = express.Router()
-//const Paciente = mongoose.model('Paciente')
+// const Paciente = mongoose.model('Paciente')
+const paciente = require('../models/paciente')
 const crud = require('../services/crud_mongo')
 
 routes.get('/pacientes', function (req, res) {
     //Capturo la respuesta del get
     crud.Mongo().get('Paciente', {}).then(function (paciente) {
         //Retorno la respuesta  al cliente
+        var obj = JSON.parse(this.paciente);
+        var items = obj['pacientes'];
+        items.forEach((e) => {
+        txt += '<tr>'  
+        txt += '<td>'+e.cedula+'</td>'
+        txt += '<td>'+e.nombre+'</td>'
+        txt += '<td>'+e.apellidos+'</td>'
+        txt += '<td>'+e.telefono+'</td>'
+        txt += '<td>'+e.direccion+'</td>'
+        txt += '<td>'+e.correo+'</td>'
+        txt += '</tr>'
+    });
+    document.getElementById('tbList').innerHTML = txt;
         console.log(paciente)
         res.send(paciente)
     }).catch(function (error) {
@@ -17,6 +31,24 @@ routes.get('/pacientes', function (req, res) {
         res.send(error)
     });
 })
+
+// routes.get('/pacientes',async (req,res) =>{
+// //Obtiene los datos de la BD
+//     const pacientes = await paciente.find();
+//     //var obj = JSON.parse(pacientes);
+
+//     for(var i=0; i< obj.length;i++){
+//         txt += '<tr>'  
+//         txt += '<td>'+e.cedula+'</td>'
+//         txt += '<td>'+e.nombre+'</td>'
+//         txt += '<td>'+e.apellidos+'</td>'
+//         txt += '<td>'+e.telefono+'</td>'
+//         txt += '<td>'+e.direccion+'</td>'
+//         txt += '<td>'+e.correo+'</td>'
+//         txt += '</tr>'
+//     }
+//     document.getElementById('tbList').innerHTML = txt;
+// });
 
 /*exports.findAll = function(req, res) {
   Paciente.find({}).exec(function(err, paciente){
