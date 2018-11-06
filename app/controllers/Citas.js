@@ -2,13 +2,26 @@
 const express = require('express');
 const routes = express.Router()
 const crud = require('../services/crud_mongo')
+const cita = require('../models/cita')
+const crud = require('../services/crud_mongo')
 
 routes.get('/', function (req, res) {
     //Capturo la respuesta del get 
-    crud.Mongo().get('Citas', {}).then(function (respuesta) {
+    crud.Mongo().get('Citas', {}).then(function (cita) {
         //Retorno la respuesta  al cliente
-        console.log(JSON.parse(respuesta));
-        res.send(respuesta)
+        var obj =JSON.parse(this.cita)
+        var items=obj['pacientes'];
+        items.forEach((e) => {
+            txt += '<tr>'  
+            txt += '<td>'+e.cedula+'</td>'
+            txt += '<td>'+e.fecha+'</td>'
+            txt += '<td>'+e.hora+'</td>'
+            txt += '<td>'+e.doctor+'</td>'
+            txt += '</tr>'
+        });
+        document.getElementById('tbList').innerHTML = txt;
+        console.log(cita);
+        res.send(cita)
     }).catch(function (error) {
         //Retorno el error al cliente
         console.log(error)
