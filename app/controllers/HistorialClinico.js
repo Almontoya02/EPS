@@ -4,11 +4,21 @@ const routes = express.Router()
 const crud = require('../services/crud_mongo')
 
 routes.get('/', function (req, res) {
-    //Capturo la respuesta del get 
-    crud.Mongo().get('HistorialClinico', {}).then(function (respuesta) {
+    //Capturo la respuesta del get
+    crud.Mongo().get('HistorialClinico', {}).then(function (HistorialClinico) {
         //Retorno la respuesta  al cliente
-        console.log(respuesta);
-        res.send(respuesta)
+        var obj = JSON.parse(HistorialClinico);
+        var items = obj['HistorialClinico'];
+        var txt ='';
+        items.forEach((e) => {
+        txt += '<tr>'  
+        txt += '<td>'+e.cedula+'</td>'
+        txt += '<td>'+e.descripcion+'</td>'
+        txt += '</tr>'
+    });
+    document.getElementById('tbList').innerHTML = txt;
+        console.log(HistorialClinico)
+        res.send(HistorialClinico)
     }).catch(function (error) {
         //Retorno el error al cliente
         console.log(error)
