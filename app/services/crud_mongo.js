@@ -84,6 +84,7 @@ class CrudOperations {
       this.client = await mongo.MongoClient.connect(this.url);
       //Obtengo la db
       this.db = this.client.db(this.dbName);
+      console.log(db)
       //Consulto datos en la coleccion
       let result = await this.db.collection(collection).find(filter).toArray();
       //Cierro la conexión
